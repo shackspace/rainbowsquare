@@ -10,17 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101130195847) do
+ActiveRecord::Schema.define(:version => 20101130222801) do
 
   create_table "entries", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "image_filename"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.integer  "game_id",                                   :null => false
+    t.integer  "player_id",                                 :null => false
+    t.string   "state",              :default => "waiting"
   end
 
   create_table "games", :force => true do |t|

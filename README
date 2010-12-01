@@ -1,6 +1,6 @@
 == Getting Started
 
-1. Move config/database.yml.example to config/database.yml and configure the database connections
+1. Copy config/database.yml.example to config/database.yml and configure the database connections
 
 2. Create the databases: rake db:create:all
 

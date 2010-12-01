@@ -10,6 +10,13 @@
   <%= @player.twitter_id %>
 </p>
 
+<p>
+  <b>Games:</b>
+  <% for game in @games %>
+    <%= game.name =%>
+    <%= link_to "Join", player_path(game.id, @player) =%>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

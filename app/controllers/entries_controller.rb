@@ -25,6 +25,8 @@ class EntriesController < ApplicationController
   # GET /entries/new.xml
   def new
     @entry = Entry.new
+    @players = Player.all
+    @games = Game.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,8 @@ class EntriesController < ApplicationController
   # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
+    @players = Player.all
+    @games = Game.all
   end
 
   # POST /entries

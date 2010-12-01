@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>Image filename</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= entry.name %></td>
     <td><%= entry.description %></td>
-    <td><%= entry.image_filename %></td>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
     <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>

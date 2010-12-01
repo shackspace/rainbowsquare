@@ -20,12 +20,16 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image_filename %><br />
-    <%= f.text_field :image_filename %>
-  </div>
-  <div class="field">
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :game %><br />
+    <%= f.collection_select :game_id, @games, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :player %><br />
+    <%= f.collection_select :player_id, @players, :id, :email  %>
   </div>
   <div class="actions">
     <%= f.submit %>
