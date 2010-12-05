@@ -22,6 +22,7 @@ gem 'mysql2'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
+gem 'devise', '1.1.5'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
@@ -29,3 +30,7 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development do
+  gem 'annotate', '2.0.2'
+end

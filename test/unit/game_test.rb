@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: games
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 require 'test_helper'
 
 class GameTest < ActiveSupport::TestCase

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101130222801) do
+ActiveRecord::Schema.define(:version => 20101205203021) do
 
   create_table "entries", :force => true do |t|
     t.string   "name"
@@ -33,10 +33,24 @@ ActiveRecord::Schema.define(:version => 20101130222801) do
   end
 
   create_table "players", :force => true do |t|
-    t.string   "email"
     t.string   "twitter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
   end
+
+  add_index "players", ["email"], :name => "index_players_on_email", :unique => true
+  add_index "players", ["reset_password_token"], :name => "index_players_on_reset_password_token", :unique => true
 
 end

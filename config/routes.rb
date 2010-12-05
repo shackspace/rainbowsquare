@@ -1,9 +1,13 @@
 Rainbowsquare::Application.routes.draw do
+  devise_for :players
+
   resources :players
 
   resources :entries
 
   resources :games
+  
+  root :to => "entries#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

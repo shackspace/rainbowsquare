@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer(4)      not null, primary key
+#  email      :string(255)
+#  twitter_id :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'test_helper'
 
 class PlayerTest < ActiveSupport::TestCase
