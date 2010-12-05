@@ -1,4 +1,6 @@
 Rainbowsquare::Application.routes.draw do
+  resources :admins
+
   devise_for :players
 
   resources :players

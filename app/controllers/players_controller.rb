@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+  before_filter :authenticate_user!, :only => :token
+
   # GET /players
   # GET /players.xml
   def index
