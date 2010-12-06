@@ -7,6 +7,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  closed      :boolean(1)
 #
 
 class Game < ActiveRecord::Base
