@@ -5,7 +5,9 @@ Rainbowsquare::Application.routes.draw do
 
   resources :entries
 
-  resources :games
+  resources :games do
+    post :join, :on => :member
+  end
   
   root :to => "entries#index"
 

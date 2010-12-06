@@ -1,10 +1,10 @@
 class GamesController < ApplicationController
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, :except => [:index, :show]
 
   # GET /games
   # GET /games.xml
   def index
-    @games = Game.all
+    @games = Game.open_games
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,6 +20,23 @@ class GamesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @game }
+    end
+  end
+  
+  def join
+    @game = Game.find(params[:id])
+    @entry = Entry.new
+    @entry.player_id = current_player.id
+    @entry.game_id = @game.id
+    
+    respond_to do |format|
+      if @entry.save
+        format.html { redirect_to(@game, :notice => 'Entry was successfully created.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "show" }
+        format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
