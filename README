@@ -1,12 +1,12 @@
 == Getting Started
 
-1. Copy config/database.yml.example to config/database.yml and configure the database connections
+1. Copy config/database.yml.example to config/database.yml and configure the database connections (you need a MySQL server)
 
 2. Create the databases: rake db:create:all
 
-2. Migrate the tables: rake db:migrate
+3. Migrate the tables with 'rake db:migrate' and run 'rake bootstrap:all' to create some default data
 
-2. Start the web server:
+4. Start the web server:
        <tt>rails server</tt> (run with --help for options)
 
-3. Go to http://localhost:3000/ and you'll see..
+5. Go to http://0.0.0.0:3000/ and login with email "admin@test.com" and password "admin123"
